@@ -4,11 +4,11 @@ namespace OOD_spotify.src.classes
     {
 
 
-        public playList(string name)
+        public playList(string name, List<song> songs)
         {
             this.name = name;
 
-            this.songs = new List<song>();
+            this.songs = songs;
 
         }
         public string name { get; set; }

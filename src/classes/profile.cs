@@ -13,14 +13,14 @@ namespace OOD_spotify.src.classes
             this.playLists = new List<playList>();
                
         }
-        
+
         public string name { get; set; }
         public List<song> playedsongs { get; set; }
         public List<song> savedsongs { get; set; }
         public List<playList> playLists { get; set; }
         public void editName()
         {
-
+            Console.WriteLine("editing ...");
         }
     }
 }

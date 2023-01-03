@@ -4,7 +4,7 @@ namespace OOD_spotify.src.classes
     {
 
 
-        public search(List<song> songs, string name)
+        public search()
         {
             this.songResult = new List<song>();
             this.artistResult = new List<artist>();
@@ -17,6 +17,7 @@ namespace OOD_spotify.src.classes
 
         public void generalSearch(string n)
         {
+            Console.WriteLine("searching ...");
             this.searchSong(n);
             this.searchArtist(n);
 

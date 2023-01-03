@@ -5,16 +5,17 @@ namespace OOD_spotify.src.classes
 
         
 
-        public song(double time, bool saved, int playedtime, artist artist)
+        public song(double time, artist artist)
         {
             this.time = time;
-            this.saved = saved;
-            this.playedtime = playedtime;
             this.artist = artist;
+            
+            this.saved = false;
+            this.playedtime = 0;
 
         }
 
-        
+
         public double time { get; set; }
         public string name { get; set; }
         public artist artist {get; set;}
