@@ -1,0 +1,15 @@
+/Users/alibarkook/Desktop/OOD/OOD-spotify/bin/Debug/net6.0/OOD-spotify
+/Users/alibarkook/Desktop/OOD/OOD-spotify/bin/Debug/net6.0/OOD-spotify.deps.json
+/Users/alibarkook/Desktop/OOD/OOD-spotify/bin/Debug/net6.0/OOD-spotify.runtimeconfig.json
+/Users/alibarkook/Desktop/OOD/OOD-spotify/bin/Debug/net6.0/OOD-spotify.dll
+/Users/alibarkook/Desktop/OOD/OOD-spotify/bin/Debug/net6.0/OOD-spotify.pdb
+/Users/alibarkook/Desktop/OOD/OOD-spotify/obj/Debug/net6.0/OOD-spotify.csproj.AssemblyReference.cache
+/Users/alibarkook/Desktop/OOD/OOD-spotify/obj/Debug/net6.0/OOD-spotify.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alibarkook/Desktop/OOD/OOD-spotify/obj/Debug/net6.0/OOD-spotify.AssemblyInfoInputs.cache
+/Users/alibarkook/Desktop/OOD/OOD-spotify/obj/Debug/net6.0/OOD-spotify.AssemblyInfo.cs
+/Users/alibarkook/Desktop/OOD/OOD-spotify/obj/Debug/net6.0/OOD-spotify.csproj.CoreCompileInputs.cache
+/Users/alibarkook/Desktop/OOD/OOD-spotify/obj/Debug/net6.0/OOD-spotify.dll
+/Users/alibarkook/Desktop/OOD/OOD-spotify/obj/Debug/net6.0/refint/OOD-spotify.dll
+/Users/alibarkook/Desktop/OOD/OOD-spotify/obj/Debug/net6.0/OOD-spotify.pdb
+/Users/alibarkook/Desktop/OOD/OOD-spotify/obj/Debug/net6.0/OOD-spotify.genruntimeconfig.cache
+/Users/alibarkook/Desktop/OOD/OOD-spotify/obj/Debug/net6.0/ref/OOD-spotify.dll
