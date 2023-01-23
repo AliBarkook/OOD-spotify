@@ -1,14 +1,14 @@
-using OOD_spotify.src.Enums;
-
 namespace OOD_spotify.src.classes
 {
-    public class Categroy
+    public class category
     {
-        public Categroy(string name)
+        public category(string name, List<song> songs)
         {
-            this.Name = name;
+            this.name = name;
+            this.songs = songs;
         }
 
-        public string Name { get; set; }
+        public List<song> songs { get; set; }
+        public string name { get; set; }
     }
 }
