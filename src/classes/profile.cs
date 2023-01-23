@@ -1,26 +1,34 @@
 namespace OOD_spotify.src.classes
 {
-    public class Profile
+    public class profile
     {
 
 
-        public Profile(string name) 
+        public profile(string name) 
         {
-            this.Name = name;
+            this.name = name;
 
-            this.PlayedSongs = new List<Song>();
-            this.SavedSongs = new List<Song>();
-            this.PlayLists = new List<PlayList>();
-               
+            this.playedsongs = new List<song>();
+            this.savedsongs = new List<song>();
+            this.playLists = new List<playList>();
+            
         }
 
-        public string Name { get; set; }
-        public List<Song> PlayedSongs { get; set; }
-        public List<Song> SavedSongs { get; set; }
-        public List<PlayList> PlayLists { get; set; }
-        public void EditName()
+        public string name { get; set; }
+        public List<song> playedsongs { get; set; }
+        public List<song> savedsongs { get; set; }
+        public List<playList> playLists { get; set; }
+        public void editName()
         {
-            Console.WriteLine("editing ...");
+            Console.WriteLine("enter new name for profile:");
+
+            var new_name = Console.ReadLine();
+
+            if (new_name != null)
+            {
+                this.name = new_name;
+                Console.WriteLine("profile name changed successfuly!");
+            }
         }
     }
 }
