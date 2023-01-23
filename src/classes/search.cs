@@ -1,36 +1,37 @@
+using OOD_spotify.src.Interfaces;
+
 namespace OOD_spotify.src.classes
 {
-    public class search
+    public class Search
     {
 
 
-        public search()
+        public Search()
         {
-            this.songResult = new List<song>();
-            this.artistResult = new List<artist>();
+            this.SongResult = new List<Song>();
+            this.ArtistResult = new List<Artist>();
         }
 
         
-        public List<song> songResult { get; set; }
-        public List<artist> artistResult { get; set; }
+        public List<Song> SongResult { get; set; }
+        public List<Artist> ArtistResult { get; set; }
 
 
-        public void generalSearch(string n)
+        public IEnumerable<ISearchable> GeneralSearch(string query)
         {
-            Console.WriteLine("searching ...");
-            this.searchSong(n);
-            this.searchArtist(n);
-
+            IEnumerable<ISearchable> SongResult = this.SearchSong(query);
+            IEnumerable<ISearchable> ArtistResult = this.SearchArtist(query);
+            return SongResult.Concat(ArtistResult);
         }
 
-        private List<song> searchSong(string n)
+        private IEnumerable<ISearchable> SearchSong(string n)
         {
-            return new List<song>();
+            return new List<Song>();
         }
 
-        private List<artist> searchArtist(string n)
+        private IEnumerable<ISearchable> SearchArtist(string n)
         {
-            return new List<artist>();
+            return new List<Artist>();
         }
     }
 }

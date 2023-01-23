@@ -1,46 +1,46 @@
 namespace OOD_spotify.src.classes
 {
-    public class user
+    public class User
     {
 
 
-        public user()
+        public User()
         {
             // ? initial data:
-            this.smapleArtist1 = new artist("mehrad hidden");
-            this.smapleArtist2 = new artist("shajarian");
+            this.smapleArtist1 = new Artist("mehrad hidden");
+            this.smapleArtist2 = new Artist("shajarian");
 
-            this.smapleSong1 = new song(125, smapleArtist1);
-            this.smapleSong2 = new song(98, smapleArtist1);
-            this.smapleSong3 = new song(450, smapleArtist2);
+            //this.smapleSong1 = new Song(125, smapleArtist1, "test");
+            //this.smapleSong2 = new Song(98, smapleArtist1, "test");
+            //this.smapleSong3 = new Song(450, smapleArtist2, "test");
 
             string username = this.login();
-            this.profile = new profile(username);
+            this.Profile = new Profile(username);
 
-            this.searchConsole = new search();
+            //this.searchConsole = new search();
 
         }
 
 
-        public search searchConsole { get; set; }
-        public profile profile { get; set; }
+        public Search searchConsole { get; set; }
+        public Profile Profile { get; set; }
 
 
 
 
 
         // ? sample data
-        public artist smapleArtist1 { get; set; }
-        public artist smapleArtist2 { get; set; }
+        public Artist smapleArtist1 { get; set; }
+        public Artist smapleArtist2 { get; set; }
 
 
-        public song smapleSong1 { get; set; }
-        public song smapleSong2 { get; set; }
-        public song smapleSong3 { get; set; }
+        public Song smapleSong1 { get; set; }
+        public Song smapleSong2 { get; set; }
+        public Song smapleSong3 { get; set; }
 
 
 
-        public void selectAction()
+        public void SelectAction()
         {
             int action = -1;
             while (action != 0)
@@ -58,7 +58,7 @@ namespace OOD_spotify.src.classes
                 switch (action)
                 {
                     case 1:
-                        this.createPlayList();
+                        this.CreatePlayList();
                         break;
 
                     case 2:
@@ -66,7 +66,7 @@ namespace OOD_spotify.src.classes
                         break;
 
                     case 3:
-                        this.editUsername();
+                        this.EditUsername();
                         break;
 
                     case 0:
@@ -82,33 +82,33 @@ namespace OOD_spotify.src.classes
 
 
 
-        private void editUsername()
+        private void EditUsername()
         {
-            this.profile.editName();
+            this.Profile.EditName();
         }
 
 
 
 
-        private void createPlayList()
+        private void CreatePlayList()
         {
 
             Console.WriteLine("creating plaulist ...");
             string playListName = "playlist 1";
 
-            List<song> songs = new List<song>();
+            List<Song> songs = new List<Song>();
 
             songs.Add(this.smapleSong1);
             songs.Add(this.smapleSong2);
 
-            var newPlayList = new playList(playListName, songs);
-            this.profile.playLists.Add(newPlayList);
+            var newPlayList = new PlayList(playListName, songs);
+            this.Profile.PlayLists.Add(newPlayList);
         }
 
         private void search()
         {
             string searchTerm = "song or artist name";
-            this.searchConsole.generalSearch(searchTerm);
+            this.searchConsole.GeneralSearch(searchTerm);
         }
 
 

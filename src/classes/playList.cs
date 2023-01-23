@@ -1,25 +1,25 @@
 namespace OOD_spotify.src.classes
 {
-    public class playList
+    public class PlayList
     {
 
 
-        public playList(string name, List<song> songs)
+        public PlayList(string name, List<Song> songs)
         {
-            this.name = name;
+            this.Name = name;
 
-            this.songs = songs;
+            this.Songs = songs;
 
         }
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public List<song> songs { get; set; }
+        public List<Song> Songs { get; set; }
 
-        public string editName()
+        public string EditName()
         {
             return "new name";
         }
-        public void editSongs()
+        public void EditSong()
         {
 
         }
