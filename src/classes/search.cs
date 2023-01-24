@@ -6,32 +6,46 @@ namespace OOD_spotify.src.classes
     {
 
 
-        public Search()
+        public Search(List<song> songs, List<artist> artists)
         {
-            this.SongResult = new List<song>();
-            this.ArtistResult = new List<artist>();
+            this.Song = songs;
+            this.Artist = artists;
         }
 
         
-        public List<song> SongResult { get; set; }
-        public List<artist> ArtistResult { get; set; }
+        public List<song> Song { get; set; }
+        public List<artist> Artist { get; set; }
 
 
-        public IEnumerable<ISearchable> GeneralSearch(string query)
+        public void GeneralSearch(string query)
         {
-            IEnumerable<ISearchable> SongResult = this.SearchSong(query);
-            IEnumerable<ISearchable> ArtistResult = this.SearchArtist(query);
-            return SongResult.Concat(ArtistResult);
+            var songName = this.SearchSong(query);
+            var artistName = this.SearchArtist(query);
+
+
+            Console.WriteLine("\nsong result:");
+            Console.WriteLine(songName + "\n");
+            Console.WriteLine("artist result:");
+            Console.WriteLine(artistName);
+
         }
 
-        private IEnumerable<ISearchable> SearchSong(string n)
+        private string SearchSong(string n)
         {
-            return new List<song>();
+            var result = this.Song.Find(song => song.name == n);
+            if (result == null)
+                return "not found";
+            else
+                return result.name + " from " + result.artist.name + " , time: " + result.Duration + "s";
         }
 
-        private IEnumerable<ISearchable> SearchArtist(string n)
+        private string SearchArtist(string n)
         {
-            return new List<artist>();
+            var result = this.Artist.Find(artist => artist.name == n);
+            if (result == null)
+                return "not found";
+            else
+                return result.name;
         }
     }
 }

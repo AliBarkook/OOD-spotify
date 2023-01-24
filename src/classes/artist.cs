@@ -22,7 +22,7 @@ namespace OOD_spotify.src.classes
 
         public void AddSong(string name)
         {
-            var song = new song(10,name);
+            var song = new song(10,name, this);
             this.songs.Add(song);
         }
 

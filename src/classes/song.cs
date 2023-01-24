@@ -7,16 +7,18 @@ namespace OOD_spotify.src.classes
 
         
 
-        public song(double duration, string name)
+        public song(double duration, string name, artist artist)
         {
             this.name= name;
             this.Duration = duration;
+            this.artist = artist;
 
         }
 
 
         public double Duration { get; set; }
         public string name { get; set; }
+        public artist artist { get; set; }
         public int PlayedCount { get; set; }
 
 

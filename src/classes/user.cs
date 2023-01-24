@@ -6,18 +6,38 @@ namespace OOD_spotify.src.classes
 
         public user()
         {
-            // ? initial data:
-            this.smapleArtist1 = new artist("mehrad hidden");
-            this.smapleArtist2 = new artist("shajarian");
 
-            //this.smapleSong1 = new Song(125, smapleArtist1, "test");
-            //this.smapleSong2 = new Song(98, smapleArtist1, "test");
-            //this.smapleSong3 = new Song(450, smapleArtist2, "test");
+
+
+
+            // ? initialaizing data
+
+            this.artistList = new List<artist>();
+
+            this.artistList.Add(new artist("shajarian"));
+            this.artistList.Add(new artist("mehrad hidden"));
+            this.artistList.Add(new artist("ebi"));
+            this.artistList.Add(new artist("yas"));
+            this.artistList.Add(new artist("sognad"));
+            this.artistList.Add(new artist("hichkas"));
+
+            Console.WriteLine(this.artistList);
+
+
+            this.songList = new List<song>();
+
+            this.songList.Add(new song(125, "rabbana", this.artistList[0]));
+            this.songList.Add(new song(98, "seyl", this.artistList[1]));
+            this.songList.Add(new song(450, "man mijangam", this.artistList[3]));
+            this.songList.Add(new song(230, "baroon", this.artistList[4]));
+            this.songList.Add(new song(130, "mara beboos", this.artistList[4]));
+            this.songList.Add(new song(90, "tehran", this.artistList[5]));
+
 
             string username = this.login();
             this.Profile = new profile(username);
 
-            //this.searchConsole = new search();
+            this.searchConsole = new Search(this.songList, this.artistList);
 
         }
 
@@ -29,14 +49,9 @@ namespace OOD_spotify.src.classes
 
 
 
-        // ? sample data
-        public artist smapleArtist1 { get; set; }
-        public artist smapleArtist2 { get; set; }
+        public List<artist> artistList { get; set; }
 
-
-        public song smapleSong1 { get; set; }
-        public song smapleSong2 { get; set; }
-        public song smapleSong3 { get; set; }
+        public List<song> songList { get; set; }
 
 
 
@@ -45,7 +60,7 @@ namespace OOD_spotify.src.classes
             int action = -1;
             while (action != 0)
             {
-                Console.WriteLine("select action number from menu:");
+                Console.WriteLine("select action number from menu:\n");
 
                 Console.WriteLine("1- create new play list");
                 Console.WriteLine("2- search");
@@ -98,8 +113,8 @@ namespace OOD_spotify.src.classes
 
             List<song> songs = new List<song>();
 
-            songs.Add(this.smapleSong1);
-            songs.Add(this.smapleSong2);
+            // songs.Add(this.smapleSong1);
+            // songs.Add(this.smapleSong2);
 
             var newPlayList = new playList(playListName, songs);
             this.Profile.playLists.Add(newPlayList);
@@ -107,18 +122,29 @@ namespace OOD_spotify.src.classes
 
         private void search()
         {
-            string searchTerm = "song or artist name";
-            this.searchConsole.GeneralSearch(searchTerm);
+
+            Console.WriteLine("enter song or artist name:");
+            var searchTerm = Console.ReadLine();
+
+            if (searchTerm != null)
+            {
+                this.searchConsole.GeneralSearch(searchTerm);
+            }
         }
 
 
         private string login()
         {
-            Console.WriteLine("welcome to spotify app!");
             Console.WriteLine("enter your username:");
+            var username = Console.ReadLine();
 
-            Console.WriteLine("loged in ...");
-            return "Ali Barkook";
+
+            if (username == null || username == "")
+                username = "guest user";
+
+            Console.WriteLine("wellcome " + username);
+
+            return username;
         }
     }
 }
