@@ -1,21 +1,21 @@
 namespace OOD_spotify.src.classes
 {
-    public class User
+    public class user
     {
 
 
-        public User()
+        public user()
         {
             // ? initial data:
-            this.smapleArtist1 = new Artist("mehrad hidden");
-            this.smapleArtist2 = new Artist("shajarian");
+            this.smapleArtist1 = new artist("mehrad hidden");
+            this.smapleArtist2 = new artist("shajarian");
 
             //this.smapleSong1 = new Song(125, smapleArtist1, "test");
             //this.smapleSong2 = new Song(98, smapleArtist1, "test");
             //this.smapleSong3 = new Song(450, smapleArtist2, "test");
 
             string username = this.login();
-            this.Profile = new Profile(username);
+            this.Profile = new profile(username);
 
             //this.searchConsole = new search();
 
@@ -23,24 +23,24 @@ namespace OOD_spotify.src.classes
 
 
         public Search searchConsole { get; set; }
-        public Profile Profile { get; set; }
+        public profile Profile { get; set; }
 
 
 
 
 
         // ? sample data
-        public Artist smapleArtist1 { get; set; }
-        public Artist smapleArtist2 { get; set; }
+        public artist smapleArtist1 { get; set; }
+        public artist smapleArtist2 { get; set; }
 
 
-        public Song smapleSong1 { get; set; }
-        public Song smapleSong2 { get; set; }
-        public Song smapleSong3 { get; set; }
+        public song smapleSong1 { get; set; }
+        public song smapleSong2 { get; set; }
+        public song smapleSong3 { get; set; }
 
 
 
-        public void SelectAction()
+        public void selectAction()
         {
             int action = -1;
             while (action != 0)
@@ -84,7 +84,7 @@ namespace OOD_spotify.src.classes
 
         private void EditUsername()
         {
-            this.Profile.EditName();
+            this.Profile.editName();
         }
 
 
@@ -96,13 +96,13 @@ namespace OOD_spotify.src.classes
             Console.WriteLine("creating plaulist ...");
             string playListName = "playlist 1";
 
-            List<Song> songs = new List<Song>();
+            List<song> songs = new List<song>();
 
             songs.Add(this.smapleSong1);
             songs.Add(this.smapleSong2);
 
-            var newPlayList = new PlayList(playListName, songs);
-            this.Profile.PlayLists.Add(newPlayList);
+            var newPlayList = new playList(playListName, songs);
+            this.Profile.playLists.Add(newPlayList);
         }
 
         private void search()

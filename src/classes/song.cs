@@ -2,32 +2,32 @@ using OOD_spotify.src.Interfaces;
 
 namespace OOD_spotify.src.classes
 {
-    public class Song : ISearchable
+    public class song : ISearchable
     {
 
         
 
-        public Song(double duration, string name)
+        public song(double duration, string name)
         {
-            this.Name= name;
+            this.name= name;
             this.Duration = duration;
 
         }
 
 
         public double Duration { get; set; }
-        public string Name { get; set; }
+        public string name { get; set; }
         public int PlayedCount { get; set; }
 
 
 
-        public void Play()
+        public void play()
         {
             this.PlayedCount++;
             Console.WriteLine("song playing");
         }
 
-        public void Share()
+        public void share()
         {
             Console.WriteLine("");
         }

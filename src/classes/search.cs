@@ -8,13 +8,13 @@ namespace OOD_spotify.src.classes
 
         public Search()
         {
-            this.SongResult = new List<Song>();
-            this.ArtistResult = new List<Artist>();
+            this.SongResult = new List<song>();
+            this.ArtistResult = new List<artist>();
         }
 
         
-        public List<Song> SongResult { get; set; }
-        public List<Artist> ArtistResult { get; set; }
+        public List<song> SongResult { get; set; }
+        public List<artist> ArtistResult { get; set; }
 
 
         public IEnumerable<ISearchable> GeneralSearch(string query)
@@ -26,12 +26,12 @@ namespace OOD_spotify.src.classes
 
         private IEnumerable<ISearchable> SearchSong(string n)
         {
-            return new List<Song>();
+            return new List<song>();
         }
 
         private IEnumerable<ISearchable> SearchArtist(string n)
         {
-            return new List<Artist>();
+            return new List<artist>();
         }
     }
 }

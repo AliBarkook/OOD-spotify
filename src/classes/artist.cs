@@ -3,40 +3,40 @@ using OOD_spotify.src.Interfaces;
 
 namespace OOD_spotify.src.classes
 {
-    public class Artist : ISearchable
+    public class artist : ISearchable
     {
 
-        public Artist(string Name)
+        public artist(string name)
         {
-            this.Songs = new List<Song>();
-            this.Name = Name;
+            this.songs = new List<song>();
+            this.name = name;
         }
 
-        private List<Song> Songs { get; set; }
-        public string Name { get ; set; }
+        private List<song> songs { get; set; }
+        public string name { get ; set; }
 
-        public void Share()
+        public void share()
         {
             
         }
 
         public void AddSong(string name)
         {
-            var song = new Song(10,name);
-            this.Songs.Add(song);
+            var song = new song(10,name);
+            this.songs.Add(song);
         }
 
         public void RemoveSong(string name) { 
-            var song = this.Songs.FirstOrDefault(song => song.Name== name);
+            var song = this.songs.FirstOrDefault(song => song.name== name);
             if(song != null)
             {
-                this.Songs.Remove(song);
+                this.songs.Remove(song);
             }
         }
 
-        public Boolean Equal(Artist artist)
+        public Boolean equal(artist artist)
         {
-            if (this.Name.Contains(artist.Name))
+            if (this.name.Contains(artist.name))
             {
                 return true;
             }
