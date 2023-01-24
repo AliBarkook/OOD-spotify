@@ -10,5 +10,6 @@ namespace OOD_spotify.src.Interfaces
     {
         public string name{ get; set; }
         public void share();
+        public Boolean Equal(ISearchable searchable);
     }
 }

@@ -15,13 +15,13 @@ namespace OOD_spotify.src.classes
 
         public List<song> Songs { get; set; }
 
-        public string editName()
+        public void EditName(string name)
         {
-            return "new name";
+            Name = name;
         }
-        public void editSong()
+        public void EditSongs(song song)
         {
-
+            this.Songs.Remove(song);
         }
     }
 }

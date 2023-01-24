@@ -20,9 +20,9 @@ namespace OOD_spotify.src.classes
             
         }
 
-        public void AddSong(string name)
+        public void AddSong(string name, category category)
         {
-            var song = new song(10,name, this);
+            var song = new song(10, name, this, category);
             this.songs.Add(song);
         }
 
@@ -34,7 +34,7 @@ namespace OOD_spotify.src.classes
             }
         }
 
-        public Boolean equal(artist artist)
+        public Boolean Equal(ISearchable artist)
         {
             if (this.name.Contains(artist.name))
             {

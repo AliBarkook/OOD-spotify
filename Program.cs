@@ -3,5 +3,5 @@ using OOD_spotify.src.classes;
 
 
 var user = new user();
-
+user.BuildProfile(user.login());
 user.selectAction();

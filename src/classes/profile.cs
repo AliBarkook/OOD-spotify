@@ -9,15 +9,15 @@ namespace OOD_spotify.src.classes
             this.name = name;
 
             this.playedsongs = new List<song>();
-            this.savedsongs = new List<song>();
             this.playLists = new List<playList>();
+            this.SavedSongs = new SavedSongs();
             
         }
 
         public string name { get; set; }
         public List<song> playedsongs { get; set; }
-        public List<song> savedsongs { get; set; }
         public List<playList> playLists { get; set; }
+        public SavedSongs SavedSongs { get; set; }
         public void editName()
         {
             Console.WriteLine("enter new name for profile:");
@@ -29,6 +29,20 @@ namespace OOD_spotify.src.classes
                 this.name = new_name;
                 Console.WriteLine("profile name changed successfuly!");
             }
+        }
+        public void AddPlayList(playList playList)
+        {
+            this.playLists.Add(playList);
+        }
+
+        public void SaveSong(song song)
+        {
+            this.SavedSongs.AddSong(song);
+        }
+
+        public void UnSaveSong(song song)
+        {
+            this.SavedSongs.RemoveSong(song);
         }
     }
 }

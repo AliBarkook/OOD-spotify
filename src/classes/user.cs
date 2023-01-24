@@ -7,9 +7,6 @@ namespace OOD_spotify.src.classes
         public user()
         {
 
-
-
-
             // ? initialaizing data
 
             this.artistList = new List<artist>();
@@ -26,16 +23,17 @@ namespace OOD_spotify.src.classes
 
             this.songList = new List<song>();
 
-            this.songList.Add(new song(125, "rabbana", this.artistList[0]));
-            this.songList.Add(new song(98, "seyl", this.artistList[1]));
-            this.songList.Add(new song(450, "man mijangam", this.artistList[3]));
-            this.songList.Add(new song(230, "baroon", this.artistList[4]));
-            this.songList.Add(new song(130, "mara beboos", this.artistList[4]));
-            this.songList.Add(new song(90, "tehran", this.artistList[5]));
+            this.songList.Add(new song(125, "rabbana", this.artistList[0],new category("blue")));
+            this.songList.Add(new song(125, "seyl", this.artistList[0],new category("blue")));
+            this.songList.Add(new song(125, "man mijangam", this.artistList[0],new category("blue")));
+            this.songList.Add(new song(125, "baroon", this.artistList[0],new category("blue")));
+            this.songList.Add(new song(125, "tehran", this.artistList[0],new category("blue")));
+            //this.songList.Add(new song(98, "seyl", this.artistList[1]));
+            //this.songList.Add(new song(450, "man mijangam", this.artistList[3]));
+            //this.songList.Add(new song(230, "baroon", this.artistList[4]));
+            //this.songList.Add(new song(130, "mara beboos", this.artistList[4]));
+            //this.songList.Add(new song(90, "tehran", this.artistList[5]));
 
-
-            string username = this.login();
-            this.Profile = new profile(username);
 
             this.searchConsole = new Search(this.songList, this.artistList);
 
@@ -102,7 +100,10 @@ namespace OOD_spotify.src.classes
             this.Profile.editName();
         }
 
-
+        public void BuildProfile(string username)
+        {
+            this.Profile = new profile(username);
+        }
 
 
         private void CreatePlayList()
@@ -117,7 +118,7 @@ namespace OOD_spotify.src.classes
             // songs.Add(this.smapleSong2);
 
             var newPlayList = new playList(playListName, songs);
-            this.Profile.playLists.Add(newPlayList);
+            this.Profile.AddPlayList(newPlayList);
         }
 
         private void search()
@@ -133,7 +134,7 @@ namespace OOD_spotify.src.classes
         }
 
 
-        private string login()
+        public string login()
         {
             Console.WriteLine("enter your username:");
             var username = Console.ReadLine();
