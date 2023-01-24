@@ -17,28 +17,26 @@ namespace OOD_spotify.src.classes
         public List<artist> Artist { get; set; }
 
 
-        public List<IEnumerator<ISearchable>> GeneralSearch(string query)
+        public List<ISearchable> GeneralSearch(string query)
         {
-            var songsIter = this.SearchSong(query).GetEnumerator();
-            var artistsIter = this.SearchArtist(query).GetEnumerator();
+            var songs = this.SearchSong(query);
+            var artists = this.SearchArtist(query);
+
+            var songsIter = songs.GetEnumerator();
+            var artistsIter = artists.GetEnumerator();
 
             while (songsIter.MoveNext())
             {
                 Console.WriteLine("song result: \n");
                 Console.WriteLine(songsIter.Current.name);
             }
-
             while (artistsIter.MoveNext())
             {
                 Console.WriteLine("song result: \n");
                 Console.WriteLine(artistsIter.Current.name);
             }
 
-            return new List<IEnumerator<ISearchable>>
-            {
-                songsIter,
-                artistsIter
-            };
+            return songs.Concat(artists).ToList();
 
         }
 
